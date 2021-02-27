@@ -28,9 +28,8 @@ class HtmlParser:
         self.soups = str(BeautifulSoup(html, 'html.parser'))
 
 
-
 class GetUrls:
-    def __init__(self, htmlparser=HtmlParser()):
+    def __init__(self, htmlparser):
         self.htmlparser = htmlparser
 
     def get_urls(self, url, deep, indentation):

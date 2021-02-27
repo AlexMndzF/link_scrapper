@@ -12,17 +12,18 @@ def get_config():
                         type=str
                         ),
     parser.add_argument('-d', '--deep',
-                        type=int
+                        type=int,
+                        default=1
                         )
     args = parser.parse_args()
     return args
 
 
 def main():
-    args = 1  # get_config()
-    url = Node("https://www.google.com")  # Nodo(args.url)
-    deep = 2  # args.deep
-    GetUrls().get_urls(url=url, deep=deep, indentation=0)
+    args = get_config()
+    url = Node(args.url)
+    deep = args.deep
+    GetUrls(HtmlParser()).get_urls(url=url, deep=deep, indentation=0)
 
 
 if __name__ == "__main__":
