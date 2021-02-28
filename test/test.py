@@ -1,11 +1,11 @@
 import unittest
 from unittest.mock import Mock
 
-import test.settings as st
+import settings as st
 from Utils import Node
 from src.htmlParser import HtmlParser
 from src.linkScrapper import LinkScrapper
-from requests.exceptions import ConnectionError, MissingSchema
+from requests.exceptions import ConnectionError
 
 
 class TestLinkScrapper(unittest.TestCase):
